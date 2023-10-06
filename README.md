@@ -4,6 +4,12 @@
 ## An open-source Python interface to operate Clash configuration.
 ## Install dependencies
 `pip3 install requests pyyaml`
+## User-Agent
+```python
+Default = f"Clash/{ClashCoreVersion}"
+Stash = f"StashCore/{StashVersion} Stash/{StashVersion} Clash/{ClashCoreVersion}"
+ClashforWindows = f"ClashforWindows/{ClashforWindowsVersion}"
+```
 ## `Config`
 ```Python
 Config(

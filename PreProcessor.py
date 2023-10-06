@@ -1,4 +1,4 @@
-# Version 2.2.1
+# Version 2.2.2
 import re
 import pickle
 import copy
@@ -269,7 +269,7 @@ class Embedded:
 
 
 class Config:
-    def __init__(self, Url: str = None, YAML: str = None, File: io.TextIOWrapper = None, DICT: dict = None):
+    def __init__(self, Url: str = None, YAML: str = None, File: io.TextIOWrapper = None, DICT: dict = None, UA="Clash/1.11.0"):
         self._bypass = ("DICT", "Proxies", "ProxyGroups", "Rules", "YAML", "_DICT",
                         "_Proxies", "_ProxyGroups", "_Rules", "_meta", "__container__")
         self._meta = {}
@@ -281,8 +281,7 @@ class Config:
         if DICT:
             self.DICT = DICT
         elif Url:
-            res = requests.get(Url, headers={
-                               'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'})
+            res = requests.get(Url, headers={"user-agent": UA})
             try:
                 self._meta["headers"]["subscription-userinfo"] = res.headers["subscription-userinfo"]
             except:

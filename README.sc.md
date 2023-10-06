@@ -4,6 +4,12 @@
 ## 一个开源的 Clash 配置文件 Python 界面。
 ## 安装依赖
 `pip3 install requests pyyaml`
+## User-Agent
+```python
+Default = f"Clash/{ClashCoreVersion}"
+Stash = f"StashCore/{StashVersion} Stash/{StashVersion} Clash/{ClashCoreVersion}"
+ClashforWindows = f"ClashforWindows/{ClashforWindowsVersion}"
+```
 ## `Config`
 ```Python
 Config(
